@@ -1,0 +1,8 @@
+FROM node:20-alpine
+USER node
+WORKDIR /var/www/portfolio
+COPY --chown=node:node package.json package-lock.json ./
+RUN npm ci
+COPY --chown=node:node . .
+RUN npm run build
+

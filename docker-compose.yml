@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.portfolio
+    volumes:
+      - portfolioBuild:/var/www/portfolio/build:ro
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.nginx
+    ports:
+      - 80:80
+    volumes:
+      - portfolioBuild:/usr/share/nginx/html
+    depends_on:
+      - portfolio
+
+volumes:
+  portfolioBuild:

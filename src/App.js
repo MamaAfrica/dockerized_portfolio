@@ -1,25 +1,18 @@
-import './App.css';
-import About from './components/About';
-import Blog from './components/Blog';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Home from './components/Home';
-import Project from './components/Project';
-import Service from './components/Service';
+import "./App.css";
 
+import Landingpage from "./components/Landingpage";
+import Research from "./components/Research";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className='App'>
-<Home />
-<About />
-<Service />
-<Project />
-<Blog/>
-<Contact/>
-<Footer/>
-</div>
-);
+    <Router>
+      <Routes>
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/research" element={<Research />} />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
