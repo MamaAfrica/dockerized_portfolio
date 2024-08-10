@@ -1,5 +1,5 @@
 Dockerfile.nginx
-Doxkerfile.portfolio
+Dockerfile.portfolio
 .dockerignore
 .gitignore
 node_modules
